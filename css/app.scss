@@ -1,0 +1,44 @@
+@import "reset";
+@import "typography";
+
+$primary-color:#ca774a;
+$body-font:"Jost";
+$body-size:24px;
+$mq-large:800px;
+$mq-med:600px;
+
+@mixin mq($width){
+    @media(max-width:$width){
+        @content;
+    }
+}
+@mixin verical-middle(){
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content:center;
+}
+
+
+body{
+    background-color:$primary-color;
+    color:#ffffff;
+    font-family: $body-font;
+    line-height: 1.5;
+    font-size:$body-size;
+    min-height: 100vh;
+
+@include verical-middle();   
+}
+section{
+    width:500px;
+
+    @include mq($mq-large){
+        widows: 350px;
+        font-size:16px;
+    }
+    
+    p{
+        margin:24px 0 0 0;
+    }
+}
